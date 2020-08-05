@@ -1,14 +1,14 @@
 function save_kde_plasmoids_config {
     PLASMOIDS_CONFIG_DIRECTORY="$HOME/.config"
     PLASMOIDS_CONFIG_FILE_NAME="$PLASMOIDS_CONFIG_DIRECTORY/plasma-org.kde.plasma.desktop-appletsrc"
-    PLASMOIDS_CONFIG_BKP_DIRECTORY="$PLASMOIDS_CONFIG_DIRECTORY/kde-plasmoids-workaround/config_files"
+    PLASMOIDS_CONFIG_BKP_DIRECTORY="$PLASMOIDS_CONFIG_DIRECTORY/kde-plasmoids-config-files"
     resolution="$(xdpyinfo | awk '/dimensions/{print $2}')"
     cp -f $PLASMOIDS_CONFIG_FILE_NAME "$PLASMOIDS_CONFIG_BKP_DIRECTORY/$resolution"
 }
 function load_kde_plasmoids_config {
     PLASMOIDS_CONFIG_DIRECTORY="$HOME/.config"
     PLASMOIDS_CONFIG_FILE_NAME="$PLASMOIDS_CONFIG_DIRECTORY/plasma-org.kde.plasma.desktop-appletsrc"
-    PLASMOIDS_CONFIG_BKP_DIRECTORY="$PLASMOIDS_CONFIG_DIRECTORY/kde-plasmoids-workaround/config_files"
+    PLASMOIDS_CONFIG_BKP_DIRECTORY="$PLASMOIDS_CONFIG_DIRECTORY/kde-plasmoids-config-files"
     resolution="$(xdpyinfo | awk '/dimensions/{print $2}')"
     if [[ -f "$PLASMOIDS_CONFIG_BKP_DIRECTORY/$resolution" ]] && [[ $(tset -q) != "linux" ]]; then
         kquitapp5 plasmashell > /dev/null 2>&1
