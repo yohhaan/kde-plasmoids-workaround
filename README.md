@@ -7,6 +7,8 @@ Whenever the display resolution is modified, the plasmoids (KDE Desktop Widgets)
 This workaround allows to save the config files of these plasmoids for each common display resolution you use (`save_kde_plasmoids_config`).
 You can then easily restore one of them (`load_kde_plasmoids_config`).
 
+Create the `PLASMOIDS_CONFIG_BKP_DIRECTORY` directory, edit your plasmoids, save the config file, and then load it in case your plasmoids have moved. 
+
 # Resolution Log-in Screen
 You may want to add the following line in `/usr/share/sddm/scripts/Xsetup` to control the resolution of the log-in screen
 ```
